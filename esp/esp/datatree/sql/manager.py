@@ -101,7 +101,6 @@ class DataTreeManager(models.Manager):
         return super(DataTreeManager, self).get(*args, **kwargs)
 
     @transaction.commit_manually
-    @serializable
     def create(self, name, parent, uri=None, start_size=None, friendly_name=None):
         """
         Create a new DataTree node.
@@ -155,7 +154,6 @@ class DataTreeManager(models.Manager):
         return self.model.root()
 
     @transaction.commit_manually
-    @serializable
     def new_ranges(self, parent, size=None, get_ranges=True):
         """
         Expand the parent to contain at least size + 1 open slots.
@@ -186,13 +184,13 @@ class DataTreeManager(models.Manager):
         transaction.commit()
         return result[0], result[0] + size - 1
 
-    def exists_violators(self, queryset=False, override=False):
+    @transaction.commit_manually
+    @serializable
+    def exists_violators(self, queryset=False):
         """
         Returns whether or not there are any violators of the range constraints.
         If queryset=True, returns a queryset to represent this.
         """
-        if not override:
-            return False
         # these are a list of functions which return violators
         range_sign_sql = self.extra(where = ['rangestart >= rangeend']).values('id')
 
@@ -219,10 +217,11 @@ WHERE
         if not queryset:
             return bool(cursor.fetchall())
         ids = [x[0] for x in cursor.fetchall()]
+        transaction.commit()
         return self.filter(id__in = ids)
 
 
-    def fix_tree_if_broken(self, override=False):
+    def fix_tree_if_broken(self):
         " This will fix all the broken nodes in the table. "
         if self.model.FIXING_TREE:
             return
@@ -232,11 +231,6 @@ WHERE
         if not self.exists_violators():
             self.model.FIXING_TREE = False
             return False
-
-        if not override:
-            import sys
-            sys.stderr.write("TREE IS BROKEN?\n===========================\n!!!!\n")
-            raise Exception()
 
         res = self.exists_violators(queryset=True)
         total = self.count()
