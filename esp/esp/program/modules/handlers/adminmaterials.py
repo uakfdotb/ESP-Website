@@ -36,9 +36,8 @@ from esp.program.models import ClassSubject, Program
 from esp.users.models import UserBit, ESPUser
 
 class AdminMaterials(ProgramModuleObj):
-    doc = """ This allows you to view the submitted documents for all classes
-    on one page. You can also upload documents particular to the program,
-    such as liability waivers and information sheets.
+    doc = """ This allows you to view the submitted documents for all classes on one page.
+    You can also upload documents particular to the program, such as liability waivers and information sheets.
     """
 
     @classmethod
