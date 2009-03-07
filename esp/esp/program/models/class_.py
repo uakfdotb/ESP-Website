@@ -604,7 +604,7 @@ class ClassSection(models.Model):
         if scrmi.use_priority:
             verbs = ['/Enrolled']
         else:
-            verbs = ['/' + scrmi.signup_verb.name]
+            verbs = ['/' + scrmi.get_signup_verb().name]
         
         # check to see if there's a conflict:
         for sec in user.getSections(self.parent_program, verbs=verbs):
@@ -868,7 +868,7 @@ class ClassSection(models.Model):
         
         scrmi = self.parent_program.getModuleExtension('StudentClassRegModuleInfo')
     
-        prereg_verb_base = scrmi.signup_verb
+        prereg_verb_base = scrmi.get_signup_verb()
         if scrmi.use_priority:
             prereg_verb = DataTree.get_by_uri(prereg_verb_base.uri + '/%d' % priority, create=True)
         else:
@@ -938,9 +938,10 @@ class ClassSubject(models.Model):
     directors_notes = models.TextField(blank=True, null=True)
     checklist_progress = models.ManyToManyField(ProgramCheckItem, blank=True)
     requested_room = models.TextField(blank=True, null=True)
-
+    
     sections = models.ManyToManyField(ClassSection, blank=True)
-
+    session_count = models.IntegerField(default=1)
+    
     objects = ClassManager()
     checklist_progress_all_cached = checklist_progress_base('ClassSubject')
 
@@ -1553,7 +1554,6 @@ was approved! Please go to http://esp.mit.edu/teach/%s/class_status/%s to view y
         return sort_fn
 
     def save(self):
-        self.duration = str(self.duration)
         super(ClassSubject, self).save()
         self.update_cache()
 
@@ -1642,15 +1642,17 @@ class ClassCategories(models.Model):
 
     Categories include 'Mathematics', 'Science', 'Zocial Zciences', etc.
     """
-    category = models.TextField()
-
+    
+    category = models.TextField(blank=False)
+    symbol = models.CharField(max_length=1, default='?', blank=False)
+    
     class Meta:
         verbose_name_plural = 'Class Categories'
         app_label = 'program'
         db_table = 'program_classcategories'
 
     def __unicode__(self):
-        return str(self.category)
+        return unicode(self.category)
         
         
     @staticmethod

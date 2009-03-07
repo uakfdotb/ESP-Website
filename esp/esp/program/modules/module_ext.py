@@ -60,9 +60,19 @@ class StudentClassRegModuleInfo(models.Model):
     module               = models.ForeignKey(ProgramModuleObj)
     enforce_max          = models.BooleanField(default=True)
     
-    signup_verb          = AjaxForeignKey(DataTree)
+    signup_verb          = AjaxForeignKey(DataTree, default=GetNode('V/Flags/Registration/Enrolled').id)
     use_priority         = models.BooleanField(default=False)
     priority_limit       = models.IntegerField(default=3)
+    
+    def get_signup_verb(self, save=False):
+        if self.signup_verb_id: # Trying to fetch self.signup_verb directly throws a DoesNotExist.
+            return self.signup_verb
+        # If it's not set, return a sensible default.
+        v = GetNode('V/Flags/Registration/Enrolled')
+        if save:
+            self.signup_verb = v
+            self.save()
+        return v
     
     def __unicode__(self):
         return 'Student Class Reg Ext. for %s' % str(self.module)
@@ -80,7 +90,7 @@ class ClassRegModuleInfo(models.Model):
     class_max_size       = models.IntegerField(blank=True, null=True)
     
     class_size_step      = models.IntegerField(blank=True, null=True)
-    director_email       = models.CharField(max_length=64, blank=True, null=True)
+    director_email       = models.EmailField(blank=True, null=True)
     class_durations      = models.CharField(max_length=128, blank=True, null=True)
     teacher_class_noedit = models.DateTimeField(blank=True, null=True)
     
