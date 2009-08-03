@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*Main*/
+body {
+	background-image:url(/media/images/Elements/bkgr.jpg);
+	color:#111;
+	font-family: Myriad, Helvetica, Arial, sans-serif;
+	font-size:14px;
+}
+
+/*Big IMG*/
+
+#head {
+	width:698px;
+	height:auto;
+	margin-left:-23px;
+	margin-right:-23px;
+}
+
+/*Header*/
+#globalhead {
+	position:relative;
+	top:-5px;
+	left:50%;
+	margin-left:-372px;
+	width:815px;
+	height:auto;
+	margin-top:-9px;
+	margin-bottom:0px;
+	z-index:9998;
+}
+#globalhead #nav { margin: 0; padding: 0; }
+#globalhead #nav li { display: inline; margin:0;}
+#globalhead #nav li a { 
+	margin:0;
+	width:116px;
+	float:left;
+	height: 0;
+	padding-top:45px;
+	overflow: hidden;
+	background-image:url(/media/images/Elements/topbar_a_varia.jpg);
+	_background-image:url(/media/images/Elements/topbar_a_varia.jpg);
+	background-repeat: no-repeat;
+}
+#globalhead #nav li a.A {
+	width:92px;
+}
+
+/* BUTTONS */
+#globalhead #nav li#button0 a { background-position: -17px 0; }
+#globalhead #nav li#button1 a { background-position: -109px 0; }
+#globalhead #nav li#button2 a { background-position: -234px 0; }
+#globalhead #nav li#button3 a { background-position: -351px 0; }
+#globalhead #nav li#button4 a { background-position: -468px 0; }
+#globalhead #nav li#button5 a { background-position: -585px 0; }
+#globalhead #nav li#button6 a { background-position: -680px 0; }
+ 
+/* OVER STATES */
+#globalhead #nav li#button0 a:hover { background-position: -17px -49px; }
+#globalhead #nav li#button1 a:hover { background-position: -109px -49px; }
+#globalhead #nav li#button2 a:hover { background-position: -234px -49px; }
+#globalhead #nav li#button3 a:hover { background-position: -351px -49px; }
+#globalhead #nav li#button4 a:hover { background-position: -468px -49px; }
+#globalhead #nav li#button5 a:hover { background-position: -585px -49px; }
+#globalhead #nav li#button6 a:hover { background-position: -680px -49px; }
+ 
+/* PRESSED STATES */
+#globalhead #nav li#button0 a:active { background-position: -17px -98px; }
+#globalhead #nav li#button1 a:active { background-position: -109px -98px; }
+#globalhead #nav li#button2 a:active { background-position: -234px -98px; }
+#globalhead #nav li#button3 a:active { background-position: -351px -98px; }
+#globalhead #nav li#button4 a:active { background-position: -468px -98px; }
+#globalhead #nav li#button5 a:active { background-position: -585px -98px; }
+#globalhead #nav li#button6 a:active { background-position: -680px -98px; }
+
+/******!!!!******/
+#sublinkcont{
+	position:relative;
+	top:58px;
+	display:block;
+	width:710px;
+	height:60px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+#sublinks li{
+	float:right;
+	display:inline;
+	list-style-type:none;
+	padding-right:20px;
+}
+
+#sublinks li a{
+	font-size:10pt;
+	color:#777;
+}
+#sublinks li a:hover{
+	color:#999;
+}
+
+/*Base*/
+#base {
+	width:698px;
+	height:auto;
+	background-image:url(/media/images/Elements/shadowback.png);
+	background-repeat:repeat-y;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:23px;
+	padding-right:23px;
+}
+#end {
+	width:698px;
+	height:38px;
+	background-color:#d5e9ed;
+	background-image:url(/media/images/Elements/bottom.png);
+	background-repeat:no-repeat;
+	margin-left:-23px;
+	margin-right:-23px;
+	padding-left:23px;
+	padding-right:23px;
+	text-align:center;
+	z-index:2;
+	padding-top:4px;
+	color:#999;
+	font-size:9px;
+}
+
+p.grad {
+	height:auto;
+	background-image:url(/media/images/Elements/backgrad_slim.jpg);
+	background-position:bottom;
+	background-repeat:repeat-x;
+	margin:0;
+	padding:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	color:#333;
+	font-size:12px;
+	line-height:15px;
+}
+p.black {
+	height:auto;
+	background-color:#000;
+	background-image:url(/media/images/Elements/blackgrad_slim.jpg);
+	background-position:top;
+	background-repeat:repeat-x;
+	margin:0;
+	margin-left:-1px;
+	margin-right:-1px;
+	padding:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	color:#BBB;
+	text-align:center;
+	font-size:12px;
+	font-weight:bold;
+	line-height:15px;
+}
+
+/*Sidebar*/
+#sidebar{
+	width:200px;
+	height:500px;
+	background-image:none;
+	color:#666;
+	font-size:9pt;
+	position:absolute;
+	top:390px;
+	left:50%;
+	margin-left:360px;
+	z-index:5;
+	padding-left:5px;
+}
+#box{
+	width:90%;
+	margin-left:-5px;
+	height:auto;
+	background-image:url(/media/images/Elements/bra.png);
+	background-position:top;
+	background-repeat:no-repeat;
+	padding:5px;
+	padding-top:5px;
+	margin-top: 8px;
+}
+
+/*Elements*/
+
+a{
+	color:#333;
+	text-decoration:none;
+}
+a:hover{
+	color:#888;
+}
