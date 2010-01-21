@@ -23,16 +23,16 @@ for arg in args:
 options['files'] = set(options['files'])
 
 colors = [
-  ['yellowgreen', 'yg', 0x88cf00, 0x56a900, 0x3f7a00],
-  ['blue',        'bl', 0x3dc0ff, 0x1c6ad2, 0x1041ba],
-  ['purple',      'pu', 0x7932e3, 0x63118c, 0x4f0873],
-  ['red',         're', 0xd45437, 0xa61031, 0x8c0724],
-  ['orange',      'or', 0xff9d00, 0xe36200, 0xc95700],
-  ['yellow',      'ye', 0xedb600, 0xd49800, 0xba8200],
-  ['lightgreen',  'lg', 0x84be6a, 0x5b7228, 0x45591b],
-  ['darkgreen',   'dg', 0x478a00, 0x2d4217, 0x20300f],
-  ['grey',        'gr', 0x666666, 0x212121, 0x000000],
-  ['black',       'bk', 0x231f20, 0xff0045, 0xcc0036]
+  ['yellowgreen', 'yg', 0x6F2F9E, 0x421466, 0x210A33],		#	Std NW purple
+  ['blue',        'bl', 0x666666, 0x333333, 0x000000],		#	Dark gray
+  ['purple',      'pu', 0x915EBA, 0x6F2F9E, 0x421466],		#	Lighter purple
+  ['red',         're', 0x999999, 0x666666, 0x333333],		#	Lighter gray
+  ['orange',      'or', 0xC8ADDE, 0x915EBA, 0x6F2F9E],		#	Lighter purple
+  ['yellow',      'ye', 0xCCCCCC, 0x999999, 0x666666],		#	Lighter gray
+  ['lightgreen',  'lg', 0xE3D3F2, 0xC8ADDE, 0x915EBA],		#	Lighter purple
+  ['darkgreen',   'dg', 0xE6E6E6, 0xCCCCCC, 0x999999],		#	Lighter gray
+  ['grey',        'gr', 0xD14B56, 0x82151E, 0x000000],		#	Dark Red
+  ['black',       'bk', 0x5B57BA, 0x211464, 0x000000]		#	Dark Blue
   ]
 
 if options['css']:
