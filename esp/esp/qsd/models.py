@@ -26,7 +26,7 @@ ESP Web Group
 MIT Educational Studies Program,
 84 Massachusetts Ave W20-467, Cambridge, MA 02139
 Phone: 617-253-4882
-Email: web@esp.mit.edu
+Email: nw-websupport@lists.learningu.org
 """
 from datetime import datetime
 import hashlib
@@ -47,7 +47,7 @@ class QSDManager(FileDBManager):
         # This writes to file_db, and caches the *data retrieval*
         # It exists because the kernel filesystem caches are possibly better
         # for retrieving large (>=4KB) data chunks than PostgreSQL
-        # See Mike Axiak's email to esp-webmasters@mit.edu on 2008-09-27 (around 12:35)
+        # See Mike Axiak's email to nw-websupport@lists.learningu.org on 2008-09-27 (around 12:35)
         # No user ID --- this caches simple DB access, so user-invariant
         file_id = qsd_cache_key(path, name, None)
         retVal = self.get_by_id(file_id)

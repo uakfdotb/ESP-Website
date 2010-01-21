@@ -26,7 +26,7 @@ ESP Web Group
 MIT Educational Studies Program,
 84 Massachusetts Ave W20-467, Cambridge, MA 02139
 Phone: 617-253-4882
-Email: web@esp.mit.edu
+Email: nw-websupport@lists.learningu.org
 
 == Addendum ==
 The idea and much of the code to generate the pretty HTML email is taken from Kenneth Arnold.

@@ -26,7 +26,7 @@ ESP Web Group
 MIT Educational Studies Program,
 84 Massachusetts Ave W20-467, Cambridge, MA 02139
 Phone: 617-253-4882
-Email: web@esp.mit.edu
+Email: nw-websupport@lists.learningu.org
 """
 from esp.program.modules.base import ProgramModuleObj, needs_student, needs_admin, main_call, aux_call
 from esp.web.util        import render_to_response
@@ -92,7 +92,7 @@ class CommModule(ProgramModuleObj):
         try:
             filterid = int(filterid)
         except:
-            raise ESPError(), "Corrupted POST data!  Please contact us at esp-webmasters@mit.edu and tell us how you got this error, and we'll look into it."
+            raise ESPError(), "Corrupted POST data!  Please contact us at nw-websupport@lists.learningu.org and tell us how you got this error, and we'll look into it."
 
         userlist = PersistentQueryFilter.getFilterFromID(filterid, User).getList(User)
 
@@ -131,7 +131,7 @@ class CommModule(ProgramModuleObj):
         try:
             filterid = int(filterid)
         except:
-            raise ESPError(), "Corrupted POST data!  Please contact us at esp-webmasters@mit.edu and tell us how you got this error, and we'll look into it."
+            raise ESPError(), "Corrupted POST data!  Please contact us at nw-websupport@lists.learningu.org and tell us how you got this error, and we'll look into it."
         
         filterobj = PersistentQueryFilter.getFilterFromID(filterid, User)
 

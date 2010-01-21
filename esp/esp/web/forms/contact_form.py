@@ -26,7 +26,7 @@ ESP Web Group
 MIT Educational Studies Program,
 84 Massachusetts Ave W20-467, Cambridge, MA 02139
 Phone: 617-253-4882
-Email: web@esp.mit.edu
+Email: nw-websupport@lists.learningu.org
 """
 
 from django import forms
@@ -52,7 +52,7 @@ email_choices = (
 email_addresses = {
     'esp'     : 'esp@mit.edu',
     'general'     : 'esp@mit.edu',    
-    'esp-web' : 'web@esp.mit.edu',
+    'esp-web' : 'nw-websupport@lists.learningu.org',
     'satprep' : 'satprep-director@mit.edu',
     'splash'  : 'esp@mit.edu',
     'hssp'    : 'hssp-director@mit.edu',
