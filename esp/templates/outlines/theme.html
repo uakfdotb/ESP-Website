@@ -2,7 +2,7 @@
 
 {% load main %} {# helpful functions #}
 
-{% block title %}Home [MOCKUP]{% endblock %}
+{% block title %}Home{% endblock %}
 {% block stylesheets %}
 <meta name="author" content="Tony Valderrama, Vincent Lee, and others" />
 <link rel="stylesheet" type="text/css" href="/media/styles/theme.css" media="all" />
@@ -205,22 +205,21 @@ name: 'User Search'
 	{% if split_url|equal:"teach"|bool_or:default_flag %}
 	<li id="tab_logo" class="yellowgreen" ><a href="/teach/index.html"><img id="logo" alt="home" src="/media/images/theme/logo.png" /></a></li>
 	<li id="tab_splash" class="blue" ><a href="/teach/Splash/index.html">SPLASH</a></li>
-	<li id="tab_spark" class="purple" ><a href="/teach/Splash/info1.html">Info 1</a></li>
-    <li id="tab_spark" class="purple" ><a href="/teach/Spark/index.html">SPARK</a></li>
-	<li id="tab_hssp" class="red" ><a href="/teach/HSSP/index.html">HSSP</a></li>
-	<li id="tab_satprep" class="orange" ><a href="/teach/SATPrep/index.html">SATPrep</a></li>
-	<li id="tab_junction" class="yellow" ><a href="/teach/Junction/index.html">JUNCTION</a></li>
-	<li id="tab_delve" class="lightgreen" ><a href="/teach/Delve/index.html">DELVE</a></li>
-	<li id="tab_proveit" class="darkgreen" ><a href="/teach/ProveIt/index.html">ProveIt</a></li>
+	<li id="tab_spark" class="purple" ><a href="/teach/info1.html">Info 1</a></li>
+    <li id="tab_spark" class="purple" ><a href="/teach/info2.html">Info 2</a></li>
+	<li id="tab_hssp" class="red" ><a href="/teach/info3.html">Info 3</a></li>
+	<li id="tab_satprep" class="orange" ><a href="/teach/info4.html">Info 4</a></li>
+	<li id="tab_junction" class="yellow" ><a href="/teach/info5.html">Info 5</a></li>
+	<li id="tab_delve" class="lightgreen" ><a href="/teach/info6.html">Info 6</a></li>
 	{% else %}
 	<li id="tab_logo" class="yellowgreen" ><a href="/learn/index.html"><img id="logo" alt="home" src="/media/images/theme/logo.png" /></a></li>
     <li id="tab_splash" class="blue" ><a href="/learn/Splash/index.html">Splash</a></li>
-    <li id="tab_hssp" class="purple" ><a href="/learn/HSSP/index.html">Info 1</a></li>
-    <li id="tab_delve" class="red" ><a href="/learn/Delve/index.html">Info 2</a></li>
-    <li id="tab_satprep" class="orange" ><a href="/learn/SATPrep/index.html">Info 3</a></li>
-	<li id="tab_splash" class="yellow" ><a href="/learn/Splash/index.html">Info 4</a></li>
-	<li id="tab_spark" class="lightgreen" ><a href="/learn/Splash/info1.html">Info 5</a></li>
-	<li id="tab_proveit" class="darkgreen" ><a href="/learn/ProveIt/index.html">Info 6</a></li>
+    <li id="tab_hssp" class="purple" ><a href="/learn/info1.html">Info 1</a></li>
+    <li id="tab_delve" class="red" ><a href="/learn/info2.html">Info 2</a></li>
+    <li id="tab_satprep" class="orange" ><a href="/learn/info3.html">Info 3</a></li>
+	<li id="tab_splash" class="yellow" ><a href="/learn/info4.html">Info 4</a></li>
+	<li id="tab_spark" class="lightgreen" ><a href="/learn/info5.html">Info 5</a></li>
+	<li id="tab_proveit" class="darkgreen" ><a href="/learn/info6.html">Info 6</a></li>
 	<li id="tab_parents" class="grey" ><a href="/learn/parents.html">Parents</a></li>
 	{% endif %}
 	{% endwith %}
@@ -270,11 +269,13 @@ name: 'User Search'
 	</form>
       </div>
       <div id="contact_info">
-	<span class="title accentcolor">GROUP NAME HERE</span>
+	<span class="title accentcolor">Northwestern University Splash</span>
+    <!--
       <span class="normal">Group Address Line 1</span>
       <span class="normal">Group Address Line 2</span>
       <span class="normal">Group Telephone</span>
-      <span class="normal"><a href="/contact.html">contact us</a></span>
+    -->
+      <span class="normal"><a href="mailto:nusplash@gmail.com">Contact Us By E-mail</a></span>
       <span class="normal"><a href="/faq.html">FAQ</a></span>
       </div>
 {% block login %}
@@ -370,7 +371,7 @@ name: 'User Search'
       {% endwith %}
     </div>
     <div id="footer">
-      &copy; Group Name Here, 2010
+      &copy; Northwestern University Splash, 2010
     </div>
   </div>
 </div>

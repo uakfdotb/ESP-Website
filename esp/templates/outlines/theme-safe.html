@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Splash! at Northwestern - {% block title %}{% endblock %}</title>
+<title>Northwestern University Splash - {% block title %}{% endblock %}</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="description" content="" />
 <meta name="keywords" content="" lang="en-us" xml:lang="en-us" />
@@ -106,13 +106,14 @@ document.getElementById('adminbar_toggle').onclick = hideadmin;
   <div id="sidebar">
       <ul id="menu">
 	<li id="tab_logo" class="yellowgreen" ><a href="/learn/index.html"><img id="logo" alt="home" src="/media/images/theme/logo.png" /></a></li>
-	<li id="tab_splash" class="blue" ><a href="/learn/Splash/index.html">SPLASH</a></li>
-	<li id="tab_spark" class="purple" ><a href="/learn/Spark/index.html">SPARK</a></li>
-	<li id="tab_hssp" class="red" ><a href="/learn/HSSP/index.html">HSSP</a></li>
-	<li id="tab_satprep" class="orange" ><a href="/learn/SATPrep/index.html">SATPrep</a></li>
-	<li id="tab_junction" class="yellow" ><a href="/learn/Junction/index.html">JUNCTION</a></li>
-	<li id="tab_delve" class="lightgreen" ><a href="/learn/Delve/index.html">DELVE</a></li>
-	<li id="tab_proveit" class="darkgreen" ><a href="/learn/ProveIt/index.html">ProveIt</a></li>
+    <li id="tab_splash" class="blue" ><a href="/learn/Splash/index.html">Splash</a></li>
+    <li id="tab_hssp" class="purple" ><a href="/learn/info1.html">Info 1</a></li>
+    <li id="tab_delve" class="red" ><a href="/learn/info2.html">Info 2</a></li>
+    <li id="tab_satprep" class="orange" ><a href="/learn/info3.html">Info 3</a></li>
+	<li id="tab_splash" class="yellow" ><a href="/learn/info4.html">Info 4</a></li>
+	<li id="tab_spark" class="lightgreen" ><a href="/learn/info5.html">Info 5</a></li>
+	<li id="tab_proveit" class="darkgreen" ><a href="/learn/info6.html">Info 6</a></li>
+	<li id="tab_parents" class="grey" ><a href="/learn/parents.html">Parents</a></li>
       </ul>
   </div>
   <div id="body">
@@ -131,11 +132,14 @@ document.getElementById('adminbar_toggle').onclick = hideadmin;
 	</form>
       </div>
       <div id="contact_info">
-	<span class="title">Splash! at Northwestern University</span>
-      <span class="normal">84 Massachusetts Avenue, Room W20-467</span>
-      <span class="normal">Cambridge, MA 02139</span>
-      <span class="normal">Tel: 617-253-4882</span>
-      <span class="normal"><a href="contact.html">contact us</a></span>
+	<span class="title accentcolor">Northwestern University Splash</span>
+    <!--
+      <span class="normal">Group Address Line 1</span>
+      <span class="normal">Group Address Line 2</span>
+      <span class="normal">Group Telephone</span>
+    -->
+      <span class="normal"><a href="mailto:nusplash@gmail.com">Contact Us By E-mail</a></span>
+      <span class="normal"><a href="/faq.html">FAQ</a></span>
       </div>
 <div id="login_box">
 
@@ -172,6 +176,9 @@ if (esp_user_login) {
       <div id="content">
 {% block content %}{% endblock %}
       </div>
+    </div>
+     <div id="footer">
+      &copy; Northwestern University Splash, 2010
     </div>
   </div>
 </div>
