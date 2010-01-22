@@ -56,16 +56,13 @@ urlpatterns += patterns('',
                         (r'^', include('esp.shortterm.urls'),),
                         )
 
-urlpatterns += patterns('esp.web.views',
-                        (r'^$', 'index',{'template':'splash.html'}), # index
-                        )
-
-# generic stuff
+# Home page
 urlpatterns += patterns('django.views.generic',
-                        (r'^web/?', 'simple.direct_to_template',{'template':'splash.html'}), # index
-                        (r'^web$', 'simple.direct_to_template',{'template':'splash.html'}), # index                        
-                        (r'^esp_web', 'simple.direct_to_template',{'template':'splash.html'}), # index
-                        (r'.php$', 'simple.direct_to_template',{'template':'splash.html'}), # index                        
+                        (r'^$', 'simple.redirect_to', {'url':'index.html'}), # index
+                        (r'^web/?', 'simple.redirect_to', {'url':'index.html'}), # index
+                        (r'^web$', 'simple.redirect_to', {'url':'index.html'}), # index                        
+                        (r'^esp_web', 'simple.redirect_to', {'url':'index.html'}), # index
+                        (r'.php$', 'simple.redirect_to', {'url':'index.html'}), # index                        
                         )
 
 # program stuff
