@@ -204,31 +204,31 @@ name: 'User Search'
 	{% with split_url|notequal:"learn"|bool_and:request.user.isTeacher as default_flag %}
 	{% if split_url|equal:"teach"|bool_or:default_flag %}
 	<li id="tab_logo" class="yellowgreen" ><a href="/teach/index.html"><img id="logo" alt="home" src="/media/images/theme/logo.png" /></a></li>
-	<li id="tab_splash" class="blue" ><a href="/teach/Splash/index.html">SPLASH</a></li>
-	<li id="tab_spark" class="purple" ><a href="/teach/info1.html">Info 1</a></li>
-    <li id="tab_spark" class="purple" ><a href="/teach/info2.html">Info 2</a></li>
-	<li id="tab_hssp" class="red" ><a href="/teach/info3.html">Info 3</a></li>
-	<li id="tab_satprep" class="orange" ><a href="/teach/info4.html">Info 4</a></li>
-	<li id="tab_junction" class="yellow" ><a href="/teach/info5.html">Info 5</a></li>
-	<li id="tab_delve" class="lightgreen" ><a href="/teach/info6.html">Info 6</a></li>
+	<li id="tab_splash" class="blue" ><a href="/teach/splash.html">SPLASH</a></li>
+	<li id="tab_spark" class="purple" ><a href="/teach/register.html">REGISTER</a></li>
+    <li id="tab_spark" class="red" ><a href="/teach/ideas.html">IDEAS</a></li>
+	<li id="tab_hssp" class="orange" ><a href="/teach/logistics.html">LOGISTICS</a></li>
 	{% else %}
-	<li id="tab_logo" class="yellowgreen" ><a href="/learn/index.html"><img id="logo" alt="home" src="/media/images/theme/logo.png" /></a></li>
-    <li id="tab_splash" class="blue" ><a href="/learn/Splash/index.html">Splash</a></li>
-    <li id="tab_hssp" class="purple" ><a href="/learn/info1.html">Info 1</a></li>
-    <li id="tab_delve" class="red" ><a href="/learn/info2.html">Info 2</a></li>
-    <li id="tab_satprep" class="orange" ><a href="/learn/info3.html">Info 3</a></li>
-	<li id="tab_splash" class="yellow" ><a href="/learn/info4.html">Info 4</a></li>
-	<li id="tab_spark" class="lightgreen" ><a href="/learn/info5.html">Info 5</a></li>
-	<li id="tab_proveit" class="darkgreen" ><a href="/learn/info6.html">Info 6</a></li>
-	<li id="tab_parents" class="grey" ><a href="/learn/parents.html">Parents</a></li>
+        {% if split_url|equal:"organize" %}
+        <li id="tab_logo" class="yellowgreen" ><a href="/organize/index.html"><img id="logo" alt="home" src="/media/images/theme/logo.png" /></a></li>
+        <li id="tab_splash" class="blue" ><a href="/organize/splash.html">SPLASH</a></li>
+        <li id="tab_hssp" class="purple" ><a href="/organize/meetings.html">MEETINGS</a></li>
+        <li id="tab_delve" class="red" ><a href="/organize/help_out.html">HELP OUT</a></li>
+        {% else %}
+        <li id="tab_logo" class="yellowgreen" ><a href="/learn/index.html"><img id="logo" alt="home" src="/media/images/theme/logo.png" /></a></li>
+        <li id="tab_splash" class="blue" ><a href="/learn/splash.html">SPLASH</a></li>
+        <li id="tab_hssp" class="purple" ><a href="/learn/register.html">REGISTER</a></li>
+        <li id="tab_delve" class="red" ><a href="/learn/directions.html">DIRECTIONS</a></li>
+        <li id="tab_satprep" class="orange" ><a href="/learn/parking.html">PARKING</a></li>
+        <br />
+        <li id="tab_parents" class="grey" ><a href="/learn/parents.html">PARENTS</a></li>
+        {% endif %}
 	{% endif %}
 	{% endwith %}
 	{% endwith %}
 	{# <li id="tab_myesp" class="grey" ><a href="/myesp/accountmanage.html">PROFILE</a></li> #}
-{% with request.path|split:"/"|index:1 as split_url %}{% ifequal split_url "teach" %}
-	<li id="tab_logistics" class="grey"><a href="/teach/logistics/index.html">LOGISTICS</a></li>
-{% endifequal %}{% endwith %}
 {% if request.user.isAdministrator %}
+    <br />
 	<li id="tab_admin" class="black" ><a href="/manage/programs/">ADMIN</a></li>
 {% endif %}
 
@@ -250,9 +250,9 @@ name: 'User Search'
 	<span class="learn"><a href="/learn/index.html">Learn</a></span>
 	{% endif %}
 	{% if split_url|notequal:"volunteer" %}
-	<span class="volunteer inactive"><a href="/volunteer/index.html">Volunteer</a></span>
+	<span class="volunteer inactive"><a href="/organize/index.html">Organize</a></span>
 	{% else %}
-	<span class="volunteer"><a href="/volunteer/index.html">Volunteer</a></span>
+	<span class="volunteer"><a href="/organize/index.html">Organize</a></span>
 	{% endif %}
 	{% endwith %}
       </div>
