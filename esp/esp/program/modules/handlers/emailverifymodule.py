@@ -105,9 +105,9 @@ class EmailVerifyModule(ProgramModuleObj):
                                                              'User %s' % self.username)
 
             newmsg_request = MessageRequest.createRequest(var_dict   = variable_modules,
-                                                          subject    = '[ESP] Email Verification For esp.mit.edu',
+                                                          subject    = '[Splash] Email Verification For nusplash.learningu.org',
                                                           recipients = filterobj,
-                                                          sender     = '"MIT Educational Studies Program" <esp@mit.edu>',
+                                                          sender     = '"Northwestern University Splash" <nusplash@gmail.com>',
                                                           creator    = self,
                                                           msgtext    = loader.find_template_source('email/verify')[0])
             

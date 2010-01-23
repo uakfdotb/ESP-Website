@@ -148,7 +148,7 @@ class TeacherInfoForm(FormWithRequiredCss):
         school = cleaned_data.get('school')
 
         if from_mit == "False" and school == "":
-            msg = u'Please enter your affiliation if you are not from MIT.'
+            msg = u'Please enter your affiliation if you are not from Northwestern.'
             self._errors['school'] = forms.util.ErrorList([msg])
             del cleaned_data['from_mit']
             del cleaned_data['school']
