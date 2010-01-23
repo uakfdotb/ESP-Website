@@ -15,7 +15,7 @@ class ESPUserTestCase(TestCase):
         dummy_program = Program(anchor = node,
                                 grade_min = 13,
                                 grade_max = 13,
-                                director_email = 'nw-websupport@lists.learningu.org',
+                                director_email = 'nu-websupport@lists.learningu.org',
                                 class_size_min = 9999,
                                 class_size_max = 9999)
 
@@ -168,7 +168,7 @@ class ESPUserTestCase(TestCase):
                                    'first_name'      : 'testx',
                                    'last_name'       :  'testy',
                                    'role'            :  role,
-                                   'email'           :  'nw-websupport@lists.learningu.org'})
+                                   'email'           :  'nu-websupport@lists.learningu.org'})
 
         for post_kwargs in test_user_list:
             response = self.client.post('/myesp/finish/', post_kwargs)
