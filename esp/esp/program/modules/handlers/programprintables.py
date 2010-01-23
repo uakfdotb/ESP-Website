@@ -1004,7 +1004,7 @@ Student schedule for %s:
                 
         context['scheditems'] = scheditems
 
-        return render_to_response(self.baseDir()+'roomrosters.html', request, (prog, tl), context)            
+        return render_to_response(self.baseDir()+'roomrosters.html', request, (prog, tl), context)
         
     @aux_call
     @needs_admin
