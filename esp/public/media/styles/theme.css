@@ -236,8 +236,8 @@ cursor: pointer;
 
 #login_signup {
 position: absolute;
-top: 9px; right: 8px;
-height: 21px; width: 40px;
+top: 9px; right: 0px;
+height: 21px; width: 48px;
 
 /*background: #fff url(/media/images/theme/signup.png) no-repeat 0% 0% scroll;*/
 color: transparent;
