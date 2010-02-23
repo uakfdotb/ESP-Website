@@ -169,6 +169,10 @@ class TeacherClassRegForm(FormWithRequiredCss):
         for field in resource_fields:
             self.fields[field].widget = forms.HiddenInput()
         
+        #   Hide field for purchase requests (don't want to give people ideas)
+        #   - Michael Price 1/25/2010
+        hide_field(self.fields['purchase_requests'])
+
         # plus subprogram section wizard
     
     def clean(self):

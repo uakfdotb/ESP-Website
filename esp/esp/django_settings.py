@@ -79,7 +79,7 @@ INTERNAL_IPS = (
 # Default admins #
 ##################
 ADMINS = (
-    ('ESP Webmasters','serverlog@esp.mit.edu'),
+    ('LU Webmasters','serverlog@lists.learningu.org'),
 )
 
 

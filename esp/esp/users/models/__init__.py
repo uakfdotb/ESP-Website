@@ -826,6 +826,7 @@ class StudentInfo(models.Model):
     studentrep = models.BooleanField(blank=True, default = False)
     studentrep_expl = models.TextField(blank=True, null=True)
     heardofesp = models.TextField(blank=True, null=True)
+    freelunch = models.BooleanField(blank=True, default=False, help_text='Does the student receive free or reduced-price lunch at school?')
 # removing shirt information, because this confused people.
 #    shirt_size = models.CharField(max_length=5, blank=True, choices=shirt_sizes, null=True)
 #    shirt_type = models.CharField(max_length=20, blank=True, choices=shirt_types, null=True)
@@ -872,8 +873,9 @@ class StudentInfo(models.Model):
         form_dict['graduation_year'] = self.graduation_year
         form_dict['school']          = self.school
         form_dict['dob']             = self.dob
+        form_dict['freelunch']       = self.freelunch
 #        form_dict['shirt_size']      = self.shirt_size
-#        form_dict['shirt_type']      = self.shirt_type
+#        form_dict['shirt_type']      = self.shirt_type\
         form_dict['heardofesp']      = self.heardofesp
         form_dict['studentrep_expl'] = self.studentrep_expl
         form_dict['studentrep']      = UserBit.UserHasPerms(user = self.user,
@@ -897,6 +899,7 @@ class StudentInfo(models.Model):
         studentInfo.school          = new_data['school']
         studentInfo.dob             = new_data['dob']
         studentInfo.heardofesp      = new_data['heardofesp']
+        studentInfo.freelunch       = new_data['freelunch']
 #        studentInfo.shirt_size      = new_data['shirt_size']
 #        studentInfo.shirt_type      = new_data['shirt_type']
         studentInfo.studentrep_expl = new_data['studentrep_expl']
