@@ -220,7 +220,8 @@ class ESPUser(User, AnonymousUser):
         if type(user) == ESPUser:
             user = user.getOld()
 
-        if ESPUser(user).isAdministrator():
+        espuser = ESPUser(user)
+        if espuser.isAdministrator() or espuser.is_staff or espuser.is_superuser:
             # Disallow morphing into Administrators.
             # It's too broken, from a security perspective.
             # -- aseering 1/29/2010
